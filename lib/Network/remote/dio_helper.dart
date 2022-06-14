@@ -1,3 +1,4 @@
+
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -7,7 +8,12 @@ class DioHelper {
     dio = Dio(
       BaseOptions(
         baseUrl: 'https://newsapi.org/',
-        receiveDataWhenStatusError: true,
+        connectTimeout: 5000,
+        receiveTimeout: 5000,
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
       ),
     );
   }

@@ -19,9 +19,9 @@ class BusnisScr extends StatelessWidget {
             return ListView.separated(
                 physics: BouncingScrollPhysics(),
                 itemBuilder: (context, index) =>
-                    buildArticleItem(NewsCubit.get(context).busniss,index),
+                    buildArticleItem(NewsCubit.get(context).busniss, index,context),
                 separatorBuilder: (context, index) => SizedBox(height: 10),
-                itemCount: 10);
+                itemCount: NewsCubit.get(context).busniss.length);
           } else {
             return CircularProgressIndicator();
           }
